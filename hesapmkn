@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hesap makinesi</title>
+
+    <style>
+      input[type="button"]{
+       
+        height: 40px;
+        width: 40px;
+        font-size: 15px;
+        margin: 6px;
+      
+        
+
+      }
+
+      #hs{
+        position: absolute;
+        top: 30px;
+        left: 550px;
+      }
+     
+
+      
+
+
+    </style>
+</head>
+<body>
+   
+    <!-- button işlemler -->
+  
+        
+    <table id="hs"  > 
+
+      <tr>
+        <td colspan="4" > <input type="text" id="ekran" disabled ></td>
+        
+      </tr>
+
+      <tr>
+      <td><input type="button" onclick="b('7')" value="7" class="bt" ></td>
+      <td><input type="button" onclick="b('8')" value="8" class="bt" ></td>
+      <td><input type="button" onclick="b('9')" value="9" class="bt" ></td>
+      <td><input type="button" onclick="b('/')" value="/" class="bt" ></td>
+      </tr>
+
+      <tr>
+      <td><input type="button" onclick="b('4')" value="4"class="bt" ></td>
+      <td><input type="button" onclick="b('5')" value="5" class="bt"></td>
+      <td><input type="button" onclick="b('6')" value="6"class="bt" ></td>
+      <td><input type="button" onclick="b('-')" value="-"class="bt" ></td>
+    </tr>
+
+     
+
+    <tr>
+      <td> <input type="button" onclick="b('1')" value="1"class="bt" > </td> 
+      <td> <input type="button" onclick="b('2')" value="2" class="bt"> </td> 
+      <td> <input type="button" onclick="b('3')" value="3"class="bt" > </td> 
+      <td> <input type="button" onclick="b('+')" value="+" class="bt" >  </td>
+    </tr>
+
+    <tr>
+      <td> <input type="button" onclick="b('0')" value="0"class="bt" > </td> 
+      <td> <input type="button" onclick="b('*')" value="*" class="bt"> </td> 
+      <td> <input type="button" onclick="hesapla()" value="="class="bt" > </td>
+      <td> <input type="button" onclick="temizle()"  value="c"class="bt"> </td>
+    </tr>
+
+      
+    </table>
+
+
+
+
+
+<script>
+  function temizle(){
+    document.getElementById("ekran").value="";
+  }
+
+  function b(değer){
+    document.getElementById("ekran").value +=değer
+  }
+
+  function hesapla(){
+    try{
+      document.getElementById("ekran").value = eval(document.getElementById("ekran").value);
+    }catch{
+      document.getElementById("ekran").value="hatalı tekrar deneyiniz"
+    }
+  }
+ 
+ 
+ 
+
+</script>
+    
+    
+    
+</body>
+</html>
